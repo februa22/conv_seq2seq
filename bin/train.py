@@ -109,7 +109,7 @@ tf.flags.DEFINE_integer("keep_checkpoint_every_n_hours", 4,
 tf.flags.DEFINE_float("gpu_memory_fraction", 1.0,
                       """Fraction of GPU memory used by the process on
                       each GPU uniformly on the same machine.""")
-tf.flags.DEFINE_boolean("gpu_allow_growth", False,
+tf.flags.DEFINE_boolean("gpu_allow_growth", True,
                         """Allow GPU memory allocation to grow
                         dynamically.""")
 tf.flags.DEFINE_boolean("log_device_placement", False,

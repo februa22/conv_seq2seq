@@ -21,6 +21,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import time
 from pydoc import locate
 
 import yaml
@@ -120,9 +121,13 @@ def main(_argv):
       session_creator=session_creator,
       hooks=hooks) as sess:
 
+    start_time = time.time()
+
     # Run until the inputs are exhausted
     while not sess.should_stop():
       sess.run([])
+    tf.logging.info("Elapsed Time: %5.5f" % (time.time() - start_time))
+
 
 if __name__ == "__main__":
   tf.logging.set_verbosity(tf.logging.INFO)
